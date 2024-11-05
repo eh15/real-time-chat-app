@@ -56,6 +56,7 @@ client.on('interactionCreate', async (interaction) => {
     }
   });
 
+// calls schema to create a task
 async function add(interaction) {
   await schema.create({
       task: interaction.options.getString('task'),
@@ -156,10 +157,12 @@ client.on("messageCreate", async message => {
         // reminds user after a certain amount of time (timer)
 
         const timer = (1+Math.floor(Math.random()*10)) *1000
-
+        /*
         setTimeout(() => {
             message.reply(`${"Remember to drink water and sleep early today!"}`); // Send the character.ai bot response in the discord channel.
         }, timer); 
+        */
+       
         // message.reply() 
         /*
         setTimeout(() => {
