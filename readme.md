@@ -12,4 +12,5 @@ Done:
 
 **Showcase:**
 Bot responses:
+
 ![Bot Showcase](https://github.com/eh15/task-lifestyle-manager/blob/master/bot_showcase.gif)

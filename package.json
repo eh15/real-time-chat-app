@@ -2,7 +2,7 @@
     "dependencies": {
         "chromium": "^3.0.3",
         "discord.js": "^14.13.0",
-        "dotenv": "^16.4.5",
+        "dotenv": "^16.4.7",
         "mongodb": "^6.7.0",
         "mongoose": "^8.4.4",
         "node_characterai": "^1.2.5",

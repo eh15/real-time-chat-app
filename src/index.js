@@ -102,7 +102,7 @@ client.on("messageCreate", async message => {
     if (message.author.bot) return;
 
     // Makes it so the bot only runs when the conversation happens in a set discord channel.
-    if (message.channel.id !== envVars.chatID) return; // Change this in botConfig.json OR remove this line if you want it to function in all chats.
+    if (message.channel.id !== process.env.chatID) return; // Change this in botConfig.json OR remove this line if you want it to function in all chats.
 
     // Specify the message sent to the character.ai chat.
     const msgText = message.content.split(" ").slice(0).join(" ");
@@ -114,13 +114,13 @@ client.on("messageCreate", async message => {
     async function aiMSG() {
         // If the connection isn't authenticated, it authenticates it with the await function.
         if (!characterAI.isAuthenticated()) {
-            await characterAI.authenticateWithToken(envVars.authToken);
+            await characterAI.authenticateWithToken(process.env.authToken);
             // To authenticate as a guest use .authenticateAsGuest()
             // To authenticate as a user use .authenticateWithToken(botConfig.authToken)
         }
 
         // Create or Continue in the character.ai chat (Uses the ChatID set in botConfig.json)
-        const chat = await characterAI.createOrContinueChat(envVars.characterID);
+        const chat = await characterAI.createOrContinueChat(process.env.characterID);
 
         // Send a message
         const response = await chat.sendAndAwaitResponse(`${msgText}`, true);
